@@ -1,0 +1,46 @@
+#:import threading threading
+<MainWid>:
+    canvas:
+        Color: 
+            rgb: 1,1,1
+        Rectangle:
+            size: self.size 
+            pos: self.pos 
+<ClearBtn>:    
+    MDRectangleFlatButton:
+        text: "Clear"
+        pos_hint: {"center_x": 0.25}
+
+        size_hint_y: 0.1 
+        size_hint_x: 0.5 
+        on_press:
+            root.clear_canvas()
+
+<DetectorBtn>:
+    MDRectangleFlatButton:
+        text: "Detect"
+        pos_hint: {"center_x": 0.75}
+        size_hint_y: 0.1 
+        size_hint_x: 0.5 
+        on_release:
+            threading.Thread(target=root.detects()).start()
+
+<StartWid>:
+    orientation: "vertical"
+    canvas:
+        Color: 
+            rgb: 1,1,1
+        Rectangle: 
+            size: self.size 
+            pos: self.pos 
+
+    MDLabel:
+        id:ab
+        text: ""
+        text_size: self.size 
+        font_size: 60 
+        bold: True 
+        halign: 'center'
+        valign: 'top'        
+<Painter>:
+    id:oscar 
