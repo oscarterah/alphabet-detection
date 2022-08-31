@@ -6,3 +6,6 @@ Kivy
 Kivymd
 Keras
 Python3
+
+<p> Youtube video link </p>
+https://youtu.be/DpG7oWHiAzY
